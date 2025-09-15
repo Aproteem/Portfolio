@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apro's Porfolio</title>
+    <title>Aproteem Majumder</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
-    <nav id="destop-nav">
+    <nav id="desktop-nav">
         <div class="logo"> Aproteem Majumder </div>
         <div>
             <ul class="nav-links">
@@ -21,6 +21,75 @@
             </ul>
         </div>
     </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo"> Aproteem Majumder </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#project" onclick="toggleMenu()">Project</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profile">
+        <div class="section_pic-container">
+            <img src="./assets/profile-pic.png" alt="Aproteem_profile_picture">
+        </div>
+        <div class="section_text">
+            <p class="section_text_p1">Hello, I'm</p>
+            <h1 class="title"> Aproteem Majumder</h1>
+            <p class="section_text_p2"> Full Stack Developer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')"> View Resume </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact' "> Contact </button>
+            </div>
+            <div class="socials-container">
+                <img src="./assets/linkedin.png" alt="My linkedin" class="icon"
+                    onclick="location.href = 'https://www.linkedin.com/in/aproteem-majumder/'">
+                <img src="./assets/github.png" alt="My github" class="icon"
+                    onclick="location.href = 'https://github.com/Aproteem'">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <p class="section_text_p1 "> Get to know more</p>
+        <h1 class="title"> About Me</h1>
+
+        <div class="section_pic-container">
+            <img src="./assets/about-pic.png" alt="profile picture" class="about-pic">
+        </div>
+        <div class="about-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <img src="./assets/experience.png" alt="experience icon" class="icon">
+                </div>
+                <h3>Experience</h3>
+                <p>Write about Work Experience Here <br> computer techninian</p>
+                <div class="details-container">
+                    <img src="./assets/education.png" alt="education icon" class="icon">
+                </div>
+                <h3>Education</h3>
+                <p>The University of Texas at Dallas <br> Bachelor's of Science in Computer Science</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, non. Facere ea quos mollitia nobis illum
+                excepturi quod suscipit iste a perferendis? Voluptate vero optio aspernatur dolores obcaecati velit
+                adipisci ex et facilis. Omnis, enim? Inventore nobis cum eius explicabo natus, minus alias fugit ad est
+                quia. Repellendus, vel nemo.</p>
+        </div>
+        <img src="./assets/arrow.png" alt="Aroow icon" class="icon arrow" onclick="location.href='./#experience'">
+    </section>
+
 
     <script src="script.js"></script>
 </body>
