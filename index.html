@@ -2,96 +2,356 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aproteem Majumder</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Aproteem Majumder</title>
+  <link rel="stylesheet" href="colors.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
-    <nav id="desktop-nav">
-        <div class="logo"> Aproteem Majumder </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav id="desktop-nav">
+    <div class="logo"> Aproteem Majumder </div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <nav id="hamburger-nav">
-        <div class="logo"> Aproteem Majumder </div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#project" onclick="toggleMenu()">Project</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
-    </nav>
+  <nav id="hamburger-nav">
+    <div class="logo"> Aproteem Majumder </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#leadership" onclick="toggleMenu()">Leadership</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
 
-    <section id="profile">
-        <div class="section_pic-container">
-            <img src="./assets/profile-pic.png" alt="Aproteem_profile_picture">
-        </div>
-        <div class="section_text">
-            <p class="section_text_p1">Hello, I'm</p>
-            <h1 class="title"> Aproteem Majumder</h1>
-            <p class="section_text_p2"> Full Stack Developer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')"> View Resume </button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact' "> Contact </button>
-            </div>
-            <div class="socials-container">
-                <img src="./assets/linkedin.png" alt="My linkedin" class="icon"
-                    onclick="location.href = 'https://www.linkedin.com/in/aproteem-majumder/'">
-                <img src="./assets/github.png" alt="My github" class="icon"
-                    onclick="location.href = 'https://github.com/Aproteem'">
-            </div>
-        </div>
-    </section>
+  <!-- Profile Section -->
+  <section id="profile">
+    <div class="section_pic-container">
+      <img src="./assets/informal_pic.jpg" alt="Aproteem_informal">
+    </div>
+    <div class="section_text">
+      <p class="section_text_p1">Hello, I'm</p>
+      <h1 class="title">Aproteem Majumder</h1>
+      <p class="section_text_p2">Full Stack Developer</p>
+      <p class="bio-text">I build robust mobile and web apps that are optimized and efficient with particular attention to user experience and minimalist design.</p>
+      <div class="fast-facts">
+        <p class="fast-facts-text">CS @ UTD | GPA: 3.93 | Deans List | Academic Excellence Scholar</p>
+      </div>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">View Resume</button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact</button>
+      </div>
+    </div>
+  </section>
 
-    <section id="about">
-        <p class="section_text_p1 "> Get to know more</p>
-        <h1 class="title"> About Me</h1>
+  <!-- Projects Section -->
+  <section id="projects">
+    <p class="section_text_p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
 
-        <div class="section_pic-container">
-            <img src="./assets/about-pic.png" alt="profile picture" class="about-pic">
+    <div class="projects-group">
+      <div class="projects-container">
+      <div class="project-card">
+        <div class="project-media">
+          <img src="./assets/project-1.png" alt="Project placeholder image">
         </div>
-        <div class="about-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <img src="./assets/experience.png" alt="experience icon" class="icon">
-                </div>
-                <h3>Experience</h3>
-                <p>Write about Work Experience Here <br> computer techninian</p>
-                <div class="details-container">
-                    <img src="./assets/education.png" alt="education icon" class="icon">
-                </div>
-                <h3>Education</h3>
-                <p>The University of Texas at Dallas <br> Bachelor's of Science in Computer Science</p>
-            </div>
+        <div class="project-details">
+          <h3>MedSplit</h3>
+          <p class="project-description">Web app (React + Next.js) that improves access to medication by enabling
+            donations, micro-grants, and bulk purchases.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">REST APIs</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link btn btn-color-2" href="#" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-link btn btn-color-1" href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
         </div>
-        <div class="text-container">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, non. Facere ea quos mollitia nobis illum
-                excepturi quod suscipit iste a perferendis? Voluptate vero optio aspernatur dolores obcaecati velit
-                adipisci ex et facilis. Omnis, enim? Inventore nobis cum eius explicabo natus, minus alias fugit ad est
-                quia. Repellendus, vel nemo.</p>
-        </div>
-        <img src="./assets/arrow.png" alt="Aroow icon" class="icon arrow" onclick="location.href='./#experience'">
-    </section>
+      </div>
 
+      <div class="project-card">
+        <div class="project-media">
+          <img src="./assets/project-2.png" alt="Project placeholder image">
+        </div>
+        <div class="project-details">
+          <h3>FinSight AI</h3>
+          <p class="project-description">Financial-report chatbot powered by LangChain + GPT-4, extracting insights from
+            unstructured PDFs.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">MongoDB</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link btn btn-color-2" href="#" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-link btn btn-color-1" href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="project-card">
+        <div class="project-media">
+          <img src="./assets/project-3.png" alt="Project placeholder image">
+        </div>
+        <div class="project-details">
+          <h3>HydraWatch</h3>
+          <p class="project-description">IoT anomaly detection system with ML regression (95% accuracy), Flask backend,
+            and SQLAlchemy database.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">IoT Data</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link btn btn-color-2" href="#" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-link btn btn-color-1" href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-media">
+          <img src="./assets/project-3.png" alt="Project placeholder image">
+        </div>
+        <div class="project-details">
+          <h3>HydraWatch</h3>
+          <p class="project-description">IoT anomaly detection system with ML regression (95% accuracy), Flask backend,
+            and SQLAlchemy database.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">IoT Data</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link btn btn-color-2" href="#" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-link btn btn-color-1" href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-media">
+          <img src="./assets/project-3.png" alt="Project placeholder image">
+        </div>
+        <div class="project-details">
+          <h3>HydraWatch</h3>
+          <p class="project-description">IoT anomaly detection system with ML regression (95% accuracy), Flask backend,
+            and SQLAlchemy database.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">IoT Data</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link btn btn-color-2" href="#" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-link btn btn-color-1" href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-media">
+          <img src="./assets/project-3.png" alt="Project placeholder image">
+        </div>
+        <div class="project-details">
+          <h3>HydraWatch</h3>
+          <p class="project-description">IoT anomaly detection system with ML regression (95% accuracy), Flask backend,
+            and SQLAlchemy database.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">IoT Data</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link btn btn-color-2" href="#" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-link btn btn-color-1" href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h1 class="title">Skills</h1>
+    <div class="skills-wrapper">
+      <div class="skills-container">
+        <div class="skills-main-card">
+          <div class="skills-grid">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">SWI Prolog</span>
+            <span class="skill-tag">Racket</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">SQLAlchemy</span>
+            <span class="skill-tag">MIPS</span>
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Blender</span>
+            <span class="skill-tag">Android Studio</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">React-Native</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">NativeWind</span>
+            <span class="skill-tag">TailWind</span>
+            <span class="skill-tag">Expo</span>
+            <span class="skill-tag">LangChain</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <p class="section_text_p1">Explore My</p>
+    <h1 class="title">Work Experience</h1>
+
+    <div class="experience-details-container">
+      <div class="experience-containers">
+        <div class="experience-card">
+          <h3>Full-Stack Developer - Mobile</h3>
+          <p class="company">Association for Computing Machinery (ACM) | Richardson, TX</p>
+          <p class="duration">Feb 2025 – May 2025</p>
+          <ul class="responsibilities">
+            <li>Built a cross-platform mobile application allowing users to track dreams and analyze with OpenAI
+              integration.</li>
+            <li>Designed responsive UI using React Native + NativeWind CSS with 100% accuracy to Figma mockups.</li>
+            <li>Developed RESTful APIs with Node.js + MongoDB, ensuring smooth CRUD operations.</li>
+            <li>Integrated AWS S3 for image storage, increasing scalability and boosting image generation by 200%.</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <h3>Computer Technician</h3>
+          <p class="company">Office of Information Technology | Richardson, TX</p>
+          <p class="duration">Oct 2024 – Present</p>
+          <ul class="responsibilities">
+            <li>Delivered technical support for UTD systems across 800+ cases via phone, email, chat, and in-person.</li>
+            <li>Achieved 97% performance rating in customer satisfaction and ticket resolution efficiency.</li>
+            <li>Collaborated with IT teams using enterprise tools (TeamDynamix, Jira, Amazon Connect, PEARL).</li>
+            <li>Trained new hires on troubleshooting + communication, cutting onboarding time significantly.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- Leadership Section -->
+  <section id="leadership">
+    <p class="section_text_p1">My Leadership</p>
+    <h1 class="title">Leadership Positions</h1>
+
+    <div class="leadership-container">
+      <div class="leadership-card">
+        <div class="leadership-details">
+          <h3>Director of Cultural Affairs</h3>
+          <p class="organization">Bangladesh Student Organization | UTD</p>
+          <p class="duration">Fall 2025 – Present</p>
+          <ul class="achievements">
+            <li>Managing 5+ officers to plan and execute cultural showcases and campus-wide events.</li>
+            <li>Collaborated with other cultural clubs to promote diversity and inclusion at UTD.</li>
+            <li>Hosted and performed at events, strengthening public speaking and leadership skills.</li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <p class="section_text_p1">Get to know more</p>
+    <h1 class="title">About Me</h1>
+
+    <div class="section-container">
+      <div class="section_pic-container">
+        <img src="./assets/about-pic.png" alt="profile picture" class="about-pic">
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="./assets/education.png" alt="education icon" class="icon">
+            <h3>Education</h3>
+            <p>The University of Texas at Dallas<br>
+              B.Sc. in Computer Science (GPA: 3.93)<br>
+              Dean’s List | AES Scholar<br>
+              Expected May 2027
+            </p>
+            <p><strong>Relevant Coursework:</strong> Software Engineering, Data Structures & Algorithms, OOP, Unix/Linux
+              Systems, Probability & Stats, Database Systems, Computer Architecture, Programming Paradigms, Computer
+              Design & Digital Logic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <p class="section_text_p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
+        <p><a href="mailto:aproteem21@gmail.com">aproteem21@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
+        <p><a href="https://www.linkedin.com/in/aproteem-majumder/">LinkedIn</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/github.png" alt="GitHub icon" class="icon contact-icon">
+        <p><a href="https://github.com/Aproteem">GitHub</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

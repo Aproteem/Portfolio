@@ -1,0 +1,37 @@
+/* Color Variables */
+:root {
+    /* Background Colors */
+    --bg-primary: #1c1f26;        /* Very dark navy/charcoal */
+    --bg-secondary: #1d1f27;      /* Dark navy variation */
+    --bg-tertiary: #1d2027;       /* Another dark navy variation */
+    
+    /* Text Colors */
+    --text-primary: #F2F0EF;      /* White text */
+    --text-secondary: #F2F0EF;    /* White text (same as primary) */
+    
+    /* Accent Colors */
+    --accent-primary: #d3c9b4;    /* Light beige/tan */
+    --accent-secondary: #d4c9b4;  /* Slightly lighter beige/tan */
+    
+    /* Interactive Elements */
+    --button-bg-default: #1d2027; /* Button default background */
+    --button-bg-hover: #d3c9b4;   /* Button hover background */
+    --button-text-default: #F2F0EF; /* Button default text */
+    --button-text-hover: #1c1f26; /* Button hover text */
+    --button-border: #d3c9b4;     /* Button border */
+    
+    /* Card Elements */
+    --card-bg: #1d2027;           /* Card background */
+    --card-border: #d3c9b4;       /* Card border */
+    
+    /* Menu Elements */
+    --menu-bg: #1d1f27;           /* Menu background */
+    --menu-border: #d3c9b4;       /* Menu border */
+    
+    /* Dot Pattern */
+    --dot-color: rgba(211, 201, 180, 0.2);  /* Static dots */
+    
+    /* Shadows */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+}
