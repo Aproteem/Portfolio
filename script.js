@@ -2,67 +2,59 @@ function toggleMenu() {
     const menu = document.querySelector(".menu-links");
     const icon = document.querySelector(".hamburger-icon");
 
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
+    if (menu && icon) {
+        menu.classList.toggle("open");
+        icon.classList.toggle("open");
+    }
 }
 
-// Profile Section Parallax Scroll Animation with Performance Optimization
-let ticking = false;
-
-function updateParallax() {
-    const scrolled = window.pageYOffset;
-    const profileSection = document.getElementById('profile');
+// Parallax Background Dots Effect
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    if (profileSection) {
-        const rect = profileSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Only animate when profile section is in view
-        if (rect.bottom >= 0 && rect.top <= windowHeight) {
-            // Different parallax speeds for different elements
-            const profileSpeed = 0.7; // Main section speed
-            const imageSpeed = 0.5; // Image moves slower
-            const textSpeed = 1.1; // Text moves faster
-            
-            // Calculate relative scroll position within the section
-            const sectionTop = rect.top;
-            const sectionHeight = rect.height;
-            const relativeScroll = Math.max(0, -sectionTop);
-            const scrollProgress = Math.min(relativeScroll / sectionHeight, 1);
-            
-            // Apply parallax transforms
-            const profileY = -(scrolled * profileSpeed);
-            const imageY = -(scrolled * imageSpeed);
-            const textY = -(scrolled * textSpeed);
-            
-            // Apply transforms with hardware acceleration
-            profileSection.style.transform = `translateY(${profileY}px) translateZ(0)`;
-            
-            // Apply different speeds to child elements
-            const imageContainer = profileSection.querySelector('.section_pic-container');
-            const textContainer = profileSection.querySelector('.section_text');
-            
-            if (imageContainer) {
-                imageContainer.style.transform = `translateY(${imageY}px) translateZ(0)`;
-            }
-            
-            if (textContainer) {
-                textContainer.style.transform = `translateY(${textY}px) translateZ(0)`;
+    // Skip parallax if user prefers reduced motion
+    if (prefersReducedMotion) {
+        return;
+    }
+    
+    // Throttle function for performance
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
             }
         }
     }
-    ticking = false;
-}
-
-function requestParallaxUpdate() {
-    if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
+    
+    // Handle parallax scrolling for background dots
+    function handleParallaxScroll() {
+        const scrolled = window.pageYOffset;
+        const parallaxSpeed = 0.3; // Slower than content (30% of scroll speed)
+        
+        // Apply parallax transform to background dots (negative for correct direction)
+        document.body.style.setProperty('--parallax-offset', `${-scrolled * parallaxSpeed}px`);
     }
-}
-
-// Use optimized scroll listener
-window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+    
+    // Add CSS custom property for parallax transform
+    const style = document.createElement('style');
+    style.textContent = `
+        body::before {
+            transform: translateY(var(--parallax-offset, 0px));
+            height: calc(100vh + 200vh);
+            min-height: calc(100vh + 200vh);
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Add scroll listener for background parallax
+    window.addEventListener('scroll', throttle(handleParallaxScroll, 16));
+});
 
 // Navigation Glassmorphism Scroll Responsiveness
 window.addEventListener('scroll', function() {
@@ -88,32 +80,36 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Cursor-following glow effect for profile section
+// Cursor-following glow effect for profile and contact sections
 document.addEventListener('DOMContentLoaded', function() {
-    const profileSection = document.getElementById('profile');
-    let lastMouseX = 50;
-    let lastMouseY = 50;
+    const sections = ['profile', 'contact'];
     
-    if (profileSection) {
-        profileSection.addEventListener('mousemove', function(e) {
-            const rect = profileSection.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            
-            // Store the last valid position
-            lastMouseX = x;
-            lastMouseY = y;
-            
-            profileSection.style.setProperty('--mouse-x', x + '%');
-            profileSection.style.setProperty('--mouse-y', y + '%');
-        });
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        let lastMouseX = 50;
+        let lastMouseY = 50;
         
-        profileSection.addEventListener('mouseleave', function() {
-            // Keep the glow at the last cursor position instead of snapping to center
-            profileSection.style.setProperty('--mouse-x', lastMouseX + '%');
-            profileSection.style.setProperty('--mouse-y', lastMouseY + '%');
-        });
-    }
+        if (section) {
+            section.addEventListener('mousemove', function(e) {
+                const rect = section.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                // Store the last valid position
+                lastMouseX = x;
+                lastMouseY = y;
+                
+                section.style.setProperty('--mouse-x', x + '%');
+                section.style.setProperty('--mouse-y', y + '%');
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                // Keep the glow at the last cursor position instead of snapping to center
+                section.style.setProperty('--mouse-x', lastMouseX + '%');
+                section.style.setProperty('--mouse-y', lastMouseY + '%');
+            });
+        }
+    });
 });
 
 // Delayed hover intent for project cards
@@ -180,47 +176,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Projects section layered parallax effect
+// Skills Section Scroll Animation - Only for individual skill tags
 document.addEventListener('DOMContentLoaded', function() {
-    const projectsSection = document.getElementById('projects');
-    const projectsTitle = projectsSection.querySelector('.title');
-    const projectsSubtitle = projectsSection.querySelector('.section_text_p1');
-    const projectsGroup = projectsSection.querySelector('.projects-group');
-    const projectsContainer = projectsSection.querySelector('.projects-container');
+    const skillsSection = document.getElementById('skills');
+    const skillTags = document.querySelectorAll('.skill-tag');
     
-    if (projectsSection && projectsTitle && projectsSubtitle && projectsGroup && projectsContainer) {
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const sectionRect = projectsSection.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            
-            // Only animate when projects section is in view
-            if (sectionRect.bottom >= 0 && sectionRect.top <= windowHeight) {
-                // Title and subtitle move faster (1.2x speed)
-                const titleSpeed = 1.2;
-                const titleY = -(scrolled * titleSpeed);
-                
-                // Project cards move slower (0.6x speed)
-                const cardsSpeed = 1.1;
-                const cardsY = -(scrolled * cardsSpeed);
-                
-                // Apply different parallax speeds to different elements
-                projectsTitle.style.transform = `translateY(${titleY}px) translateZ(0)`;
-                projectsSubtitle.style.transform = `translateY(${titleY}px) translateZ(0)`;
-                projectsContainer.style.transform = `translateY(${cardsY}px) translateZ(0)`;
-                
-                // Enable hardware acceleration
-                projectsTitle.style.willChange = 'transform';
-                projectsSubtitle.style.willChange = 'transform';
-                projectsContainer.style.willChange = 'transform';
-            }
-        }
-        
-        // Use optimized scroll listener
-        window.addEventListener('scroll', updateParallax, { passive: true });
-        
-        // Initial call
-        updateParallax();
-    }
+    // Skills section is now visible by default - no animation needed
 });
 
