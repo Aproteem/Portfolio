@@ -184,3 +184,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Skills section is now visible by default - no animation needed
 });
 
+// Dynamic Year in Footer
+document.addEventListener('DOMContentLoaded', function() {
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+});
+

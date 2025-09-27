@@ -175,6 +175,23 @@ nav.scrolled {
     text-decoration: none;
 }
 
+/* View Resume Link Styling */
+.nav-links a[onclick*="resume.pdf"] {
+    color: var(--bg-primary) !important;
+    font-weight: 600;
+    background: var(--accent-primary) !important;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links a[onclick*="resume.pdf"]:hover {
+    color: var(--bg-primary) !important;
+    background: #F5F5DC !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(211, 201, 180, 0.2);
+    text-decoration: none;
+}
+
 .logo {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2rem;
@@ -1240,7 +1257,7 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: 70vh;
+    min-height: 50vh;
     position: relative;
 }
 
@@ -1304,13 +1321,13 @@ section {
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .contact-message {
     font-size: 1.2rem;
     color: var(--text-primary);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     line-height: 1.6;
     max-width: 600px;
     margin-left: auto;
@@ -1732,5 +1749,63 @@ section {
     section {
         padding: 2rem 1rem;
         min-height: 60vh;
+    }
+}
+
+/* FOOTER SECTION */
+.footer {
+    background: rgba(20, 22, 28, 0.95);
+    border-top: 1px solid rgba(211, 201, 180, 0.2);
+    padding: 2rem 0;
+    margin-top: 2rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-left p,
+.footer-right p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.footer-left p {
+    color: var(--accent-primary);
+}
+
+.footer-right p {
+    color: var(--text-primary);
+}
+
+/* Mobile footer styles */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 0;
+        margin-top: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+    
+    .footer-left p,
+    .footer-right p {
+        font-size: 0.85rem;
     }
 }
